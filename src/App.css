@@ -1,0 +1,36 @@
+body{
+  margin: 0px;
+}
+
+.login-page,.signup{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0px auto;
+}
+
+.login-page-content,.signup-page-content{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.login,.signup{
+  margin-top:150px;
+}
+
+.success-page{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  align-items: center;
+
+}
+
+img{
+  object-fit: contain;
+}
