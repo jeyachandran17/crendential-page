@@ -12,6 +12,12 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
+import { ForgetPassword } from './ForgetPassword';
+
+import { Home } from './Home';
+import { SuccessPage } from './SuccessPage';
+import { NewPassword } from './NewPassword';
+import { OTPPage } from './OTPPage';
 
 
 function App() {
@@ -44,6 +50,9 @@ function App() {
             <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/forgetpassword" element={<ForgetPassword />} />
+              <Route path="/otp-page" element={<OTPPage />} />
+              <Route path="/newpassword" element={<NewPassword />} />
               <Route path="/success" element={<ProductedRoute><SuccessPage /></ProductedRoute>} />
             </Routes>
           </div>
@@ -70,19 +79,4 @@ function logout() {
   window.location.href = "/"; // one time refresh
 }
 
-function Home() {
-  return (
-    <div className='home-page'>
-      <h1>Welcome react application</h1>
-    </div>
-  );
-}
 
-function SuccessPage() {
-  return (
-    <div className='success-page'>
-      <h3>well done your are successfull login the page.</h3>
-      <img src="https://media4.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="" />
-    </div>
-  );
-}

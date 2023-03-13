@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 const formValidationSchema = yup.object({
   email : yup.string().required().email(),
@@ -18,7 +18,7 @@ export function Login() {
   const [formState,setformState] = useState("success")
     const {handleBlur,handleChange,handleSubmit,values,touched,errors} = useFormik({
     initialValues: {
-      email: " ",
+      email: "",
       password: "",
     },
     validationSchema : formValidationSchema,
@@ -53,8 +53,12 @@ export function Login() {
           <TextField id="outlined-basic" error={errors.email && touched.email} helperText={errors.email && touched.email ? errors.email : null } value={values.email} name="email" onChange={handleChange} onBlur={handleBlur}  label="Email id" variant="outlined" />
           <TextField id="outlined-basic" error={errors.password && touched.password} helperText={errors.password && touched.password ? errors.password : null } value={values.password} name="password" onChange={handleChange} onBlur={handleBlur} type="password" label="Password" variant="outlined" />
           <Button type='submit' color={formState} variant="contained">{formState === "success" ? "Submit" : "retry"}</Button>
+          <Link className='forget-password-link' onClick={()=>navigate("/forgetpassword")}>Forget password</Link>
         </CardContent>
       </Card>
     </form>
   );
 }
+
+
+
