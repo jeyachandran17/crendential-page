@@ -22,7 +22,7 @@ export function ChangePassword() {
   const [Email, setemail] = useState(null)
   
   useEffect(() => {
-      fetch(`http://localhost:4000/user/${email}`)
+      fetch(`https://credential-nodejs.vercel.app/user/${email}`)
         .then((data) => data.json())
           .then((data)=>setemail(data))
   },[email])
@@ -54,7 +54,7 @@ export function NewPassword({ Email }) {
   const updatepassword = async (updatepassword) => {
     // console.log(updatepassword);
     
-   await fetch(`http://localhost:4000/user/${Email.email}`, {
+   await fetch(`https://credential-nodejs.vercel.app/user/${Email.email}`, {
       method : "PUT",
       body: JSON.stringify(updatepassword),
       headers: {

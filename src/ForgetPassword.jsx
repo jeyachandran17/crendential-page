@@ -24,7 +24,7 @@ export function ForgetPassword() {
       console.log(values);
       // console.log("Update password successfully", values);
       // navigate("/login");
-      const data = await fetch("http://localhost:4000/user/forgot-password", {
+      const data = await fetch("https://credential-nodejs.vercel.app/user/forgot-password", {
        method: "POST",
        headers: {
          "Content-Type": "application/json"
